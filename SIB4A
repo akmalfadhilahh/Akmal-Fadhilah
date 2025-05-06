@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>User Profile Page<style>
+  /* Reset and base styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafb;
+    color: #333;
+    line-height: 1.6;
+  }
+  a {
+    color: #0366d6;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Container */
+  .container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  header h1 {
+    font-weight: 700;
+    color: #222;
+    font-size: 1.8rem;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  /* User profile section */
+  .profile {
+    display: flex;
+    gap: 30px;
+    margin: 30px 0;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .profile-image {
+    flex: 0 0 150px;
+  }
+  .profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0366d6;
+  }
+  .profile-info {
+    flex: 1;
+    min-width: 250px;
+  }
+  .profile-info h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+  .profile-info p {
+    font-size: 1rem;
+    color: #555;
+  }
+  .profile-info .location {
+    margin-top: 8px;
+    font-style: italic;
+    color: #777;
+  }
+
+  /* Stats - Flex children horizontally */
+  .stats {
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+  }
+  .stat {
+    background: #0366d6;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+    flex: 1;
+    min-width: 100px;
+  }
+  .stat small {
+    display: block;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+
+  /* Main content */
+  main {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  }
+  main h3 {
+    margin-top: 0;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #0366d6;
+  }
+
+  /* Posts list */
+  ul.posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.posts li {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+  }
+  ul.posts li:last-child {
+    border-bottom: none;
+  }
+  ul.posts li h4 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+  }
+  ul.posts li p {
+    margin: 0;
+    color: #444;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 40px 0 20px 0;
+  }
+
+  /* Responsive for mobile */
+  @media (max-width: 600px) {
+    .profile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .profile-info {
+      min-width: auto;
+    }
+    .stats {
+      flex-direction: column;
+    }
+    .stat {
+      min-width: auto;
+    }
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+<div class="container">
+   <header>
+     <h1>User Profile</h1>
+     <nav aria-label="Primary">
+       <ul>
+         <a href="#" aria-current="page">Home</li>
+         <a href="#">About</li>
+         <a href="#">Posts</li>
+         <a href="#">Contact</li>
+       </ul>
+     </nav>
+   </header>
+
+   <section class="profile" aria-label="User Information">
+     <div class="profile-image">
+       <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&h=150" alt="User profile photo of Jane Doe" />
+     </div>
+     <div class="profile-info">
+       <h2>Jane Doe</h2>
+       <p>Frontend Developer with a passion for creating beautiful and functional web applications</p>
+       <p class="location">📍 Bandung, Indonesia</p>
+
+       <div class="stats" aria-label="User statistics">
+         <div class="stat" tabindex="0">
+            150<small>Posts</small>
+         </div>
+         <div class="stat" tabindex="0">
+            300<small>Followers</small>
+         </div>
+         <div class="stat" tabindex="0">
+            180<small>Following</small>
+         </div>
+       </div>
+     </div>
+   </section>
+
+   <main>
+     <h3>Recent Posts</h3>
+     <ul class="posts">
+       <li>
+         <h4>Learning Flexbox: Tips & Tricks</h4>
+         <p>Flexbox is a powerful layout module that helps create responsive layouts efficiently</p>
+       </li>
+       <li>
+         <h4>Why CSS Grid is the future</h4>
+         <p>Exploring the potential of CSS Grid in modern web development design workflows</p>
+       </li>
+       <li>
+         <h4>JavaScript ES2024: What to Expect</h4>
+         <p>A preview of new features and improvements coming in the next ECMAScript release</p>
+       </li>
+     </main>
+
+   <footer>
+      &copy; 2024 Jane Doe - User Profile Page
+   </footer>
+ 
